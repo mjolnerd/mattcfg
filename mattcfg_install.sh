@@ -3,6 +3,7 @@
 ## Your current bashrc needs:
 #alias mattcfg='/usr/bin/git --git-dir=$HOME/.mattcfg/ --work-tree=$HOME'
 # 
+# You'll probably need to log out and back in after running this.
 
 git clone --bare https://github.com/mjolnerd/mattcfg.git $HOME/.mattcfg
 function mattcfg {
@@ -18,3 +19,7 @@ if [ $? = 0 ]; then
 fi;
 mattcfg checkout
 mattcfg config status.showUntrackedFiles no
+
+# Install liquidprompt
+git clone https://github.com/nojhan/liquidprompt.git $HOME/liquidprompt
+
