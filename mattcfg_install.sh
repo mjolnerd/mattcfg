@@ -23,3 +23,10 @@ mattcfg config status.showUntrackedFiles no
 # Install liquidprompt
 git clone https://github.com/nojhan/liquidprompt.git $HOME/liquidprompt
 
+# vim configuration
+mkdir -pv ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# grab our pathogen plugins
+git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+
