@@ -16,12 +16,6 @@ if &t_Co >= 256 || has('gui_running')
   set guifont=DejaVu\ Sans\ Mono:h14
 endif
 
-" pathogen is a plugin for managing plugins as bundles
-"filetype off
-"call pathogen#runtime_append_all_bundles()
-" generate helptag documentation for any existing bundles
-"call pathogen#helptags()
-
 " enable filetype and plugins
 filetype on
 filetype indent on
@@ -54,6 +48,7 @@ set hlsearch    " highlight search on by default
 set noincsearch   " move cursor as you type search terms
 set autoread            " auto read in files that have changed underneath
 set shellcmdflag=-lc  " set the ! shell to be a login shell to get at functions and aliases
+let g:vim_markdown_folding_disabled=1
 
 "====[ Make the 81st column"standout"]==========================================
 let &colorcolumn=join(range(81,999),",")

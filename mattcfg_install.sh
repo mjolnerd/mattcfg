@@ -2,7 +2,7 @@
 
 ## Your current bashrc needs:
 #alias mattcfg='/usr/bin/git --git-dir=$HOME/.mattcfg/ --work-tree=$HOME'
-# 
+#
 # You'll probably need to log out and back in after running this.
 
 git clone --bare https://github.com/mjolnerd/mattcfg.git $HOME/.mattcfg
@@ -28,5 +28,12 @@ mkdir -pv ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # grab our pathogen plugins
-git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
-
+cd ~/.vim/bundle
+git clone https://github.com/altercation/vim-colors-solarized.git
+git clone https://github.com/godlygeek/tabular.git
+git clone https://github.com/bronson/vim-trailing-whitespace.git
+git clone https://github.com/elzr/vim-json.git
+git clone https://github.com/plasticboy/vim-markdown.git
+git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/vim-airline/vim-airline.git
