@@ -15,7 +15,7 @@ if [ $? = 0 ]; then
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
-    mattcfg checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+    mattcfg checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv -v {} .config-backup/{}
 fi;
 mattcfg checkout
 mattcfg config status.showUntrackedFiles no
