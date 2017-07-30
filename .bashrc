@@ -7,6 +7,8 @@ export PATH
 ## Aliases go here
 # This alias allows control of my dotfiles as a git repo
 alias mattcfg='/usr/bin/git --git-dir=$HOME/.mattcfg/ --work-tree=$HOME'
+# Set a long list command
+alias ll='ls -lG'
 
 #Set up a nice prompt
 ## This relies on LiquidPrompt already being installed on the host.
