@@ -15,3 +15,8 @@ alias mattcfg='/usr/bin/git --git-dir=$HOME/.mattcfg/ --work-tree=$HOME'
 #
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+
+## Load system specific stuff here
+if [ -f ~/.bashrc_specialneeds ]; then
+          . ~/.bashrc_specialneeds
+        fi
