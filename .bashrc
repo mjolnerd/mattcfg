@@ -7,7 +7,15 @@ export PATH
 ## Aliases go here
 # This alias allows control of my dotfiles as a git repo
 alias mattcfg='/usr/bin/git --git-dir=$HOME/.mattcfg/ --work-tree=$HOME'
+# Pretty colors make listings easier to visually parse
+if [ "$(uname -s)" == "Darwin" ]
+then
+  alias ls='ls -G'
+else
+  alias ls='ls --color=auto'
+fi
 # Set a long list command
+alias l.='ls -d .* --color=auto'
 alias ll='ls -lG'
 
 #Set up a nice prompt
