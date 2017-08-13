@@ -14,7 +14,9 @@ pathmunge () {
         fi
 }
 
-pathmunge=$HOME/local/bin:$HOME/bin:$HOME/ansible/bin:$PATH
+pathmunge $HOME/local/bin
+pathmunge $HOME/bin
+pathmunge $HOME/ansible/bin
 export PATH
 
 ## Aliases go here
