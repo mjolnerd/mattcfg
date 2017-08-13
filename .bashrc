@@ -1,16 +1,20 @@
-
+echo -e "\nStarting environment setup for ${USER}"
 
 ## SET PATH
 # This is to prevent duplicates.  I was having an issue with the PATH on my MBP
 #  growing with duplicates.
 #  Shamelessly stolen from: https://unix.stackexchange.com/questions/110042/how-can-i-clean-out-duplicate-entries-from-my-path
 pathmunge () {
-        if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
+        if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
            if [ "$2" = "after" ] ; then
               PATH=$PATH:$1
+              echo "Adding $1 to front of \$PATH."
            else
               PATH=$1:$PATH
+              echo "Adding $1 to front of \$PATH."
            fi
+        else
+          echo "$1 already in \$PATH"
         fi
 }
 
@@ -18,6 +22,8 @@ pathmunge $HOME/local/bin
 pathmunge $HOME/bin
 pathmunge $HOME/ansible/bin
 export PATH
+echo "Current \$PATH:"
+echo -e "$PATH\n"
 
 ## Aliases go here
 # This alias allows control of my dotfiles as a git repo
