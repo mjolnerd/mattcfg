@@ -1,7 +1,20 @@
 
 
-# SET PATH
-PATH=$HOME/local/bin:$HOME/bin:$HOME/ansible/bin:$PATH
+## SET PATH
+# This is to prevent duplicates.  I was having an issue with the PATH on my MBP
+#  growing with duplicates.
+#  Shamelessly stolen from: https://unix.stackexchange.com/questions/110042/how-can-i-clean-out-duplicate-entries-from-my-path
+pathmunge () {
+        if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
+           if [ "$2" = "after" ] ; then
+              PATH=$PATH:$1
+           else
+              PATH=$1:$PATH
+           fi
+        fi
+}
+
+pathmunge=$HOME/local/bin:$HOME/bin:$HOME/ansible/bin:$PATH
 export PATH
 
 ## Aliases go here
