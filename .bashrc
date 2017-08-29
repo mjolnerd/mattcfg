@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 echo -e "\nStarting environment setup for ${USER}"
 
 ## SET PATH
