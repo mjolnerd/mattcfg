@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# These are some examples of things that I often end up dropping into
+#  a host specific config.
+
+# Let's spin up ssh-agent on this host and load in any keys that are available.
+#  I usually only do this on hosts which I am going to develop on.  Worker
+#  hosts usually do not get this config.
+# This does try and check for an already running agent.  Mostly to keep
+#  duplicates from being spun up when using tmux or something.
+ssh-add -l &>/dev/null
+if [ "$?" == 2 ]; then
+  test -r ~/.ssh-agent && \
+    eval "$(<~/.ssh-agent)" >/dev/null
+
+  ssh-add -l &>/dev/null
+  if [ "$?" == 2 ]; then
+    (umask 066; ssh-agent > ~/.ssh-agent)
+    echo "Starting ssh-agent"
+    eval "$(<~/.ssh-agent)" >/dev/null
+    ssh-add
+  fi
+fi
+
+echo -e "\nAvailable SSH Keys:"
+ssh-add -l
