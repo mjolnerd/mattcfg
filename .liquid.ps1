@@ -38,12 +38,14 @@ LP_PS1="${LP_PS1}${LP_BRACKET_OPEN}${LP_USER}${LP_HOST}${LP_BRACKET_CLOSE} ${LP_
 LP_PS1="${LP_PS1}${LP_RUNTIME}${LP_ERR}"
 
 #Second Line
+LP_PS1="${LP_PS1}\n"
 # Add path
-LP_PS1="${LP_PS1}\n[${LP_PWD}${LP_PERM}]"
-#Third line
-
+LP_PS1="${LP_PS1}[${LP_PWD}${LP_PERM}]"
 #Virtual Environments and Repos
-LP_PS1="${LP_PS1}\n${LP_VENV}${LP_PROXY}"
+LP_PS1="${LP_PS1}${LP_VENV}${LP_PROXY}"
+
+#Third line
+LP_PS1="${LP_PS1}\n"
 
 # Add VCS infos
 # If root, the info has not been collected unless LP_ENABLE_VCS_ROOT
