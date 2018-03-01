@@ -37,3 +37,4 @@ git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/vim-airline/vim-airline.git
+git clone https://github.com/Yggdroot/indentLine.git

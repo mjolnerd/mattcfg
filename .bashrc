@@ -35,6 +35,8 @@ alias mattcfg='/usr/bin/git --git-dir=$HOME/.mattcfg/ --work-tree=$HOME'
 if [ "$(uname -s)" == "Darwin" ]
 then
   alias ls='ls -G'
+  # Just going to wedge this in here...
+  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 else
   alias ls='ls --color=auto'
 fi
