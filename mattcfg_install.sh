@@ -1,7 +1,11 @@
 #!/bin/bash
 
-## Your current bashrc needs:
+## Your current bash session needs:
 #alias mattcfg='/usr/bin/git --git-dir=$HOME/.mattcfg/ --work-tree=$HOME'
+#
+# Do not name this file 'mattcfg_install.sh' or it will conflict with the
+#  git checkout.  You might also want to move the current bashrc out of
+#  the way as well.
 #
 # You'll probably need to log out and back in after running this.
 
