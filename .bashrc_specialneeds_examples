@@ -22,5 +22,15 @@ if [ "$?" == 2 ]; then
   fi
 fi
 
+#Add keys that are not already added
+for F in mykey1 mykey2
+do
+  FP="${HOME}/.ssh/${F}"
+  ssh-add -l|grep -q "$FP"
+  if [ "$?" != 0 ];then
+    ssh-add "$FP"
+  fi
+done
+
 echo -e "\nAvailable SSH Keys:"
 ssh-add -l
